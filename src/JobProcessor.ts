@@ -100,7 +100,9 @@ export class JobProcessor {
 		private processEvery: number
 	) {
 		log('creating interval to call processJobs every [%dms]', processEvery);
-		this.processInterval = setInterval(() => this.process(), processEvery);
+		if (processEvery >= 0) {
+			this.processInterval = setInterval(() => this.process(), processEvery);
+		}
 		this.process();
 	}
 

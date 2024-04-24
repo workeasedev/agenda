@@ -200,6 +200,10 @@ export class Agenda extends EventEmitter {
 		}
 	}
 
+	getJobProcessor(): JobProcessor | undefined {
+		return this.jobProcessor;
+	}
+
 	/**
 	 * Set name of queue
 	 * @param name
